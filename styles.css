@@ -9,6 +9,7 @@
     --button-background-top: #845EEE;
     --dot-background: #845EEE;
     --dot-background-back: #662cd147;
+    --selection-background: #4D5562;
 }
 *{
     font-family: Inter;
@@ -128,7 +129,7 @@
     justify-content: center;
     align-items: center;
 }
-.dot__wrapper .step1{
+.dot__wrapper .used{
     background-color: var(--dot-background);
 }
  .current{
@@ -142,6 +143,28 @@
     height: 12px;
     background-color: var(--border-color);
     border-radius: 50%;
+}
+#three__choices__wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 80%;
+}
+.button__choice{
+    font-size: .875rem;
+    padding-left: 5%;
+    text-align: left;
+    color: #A1A1A9;
+    border-radius: 1.5vmin;
+    border-color: transparent;
+    background-color: var(--selection-background);
+    width: 100%;
+    height: 20%;
+    outline: .5px solid #A1A1A9;
+}
+button:hover{
+    cursor: pointer;
 }
 @media(max-width: 641px){
     #center__box{

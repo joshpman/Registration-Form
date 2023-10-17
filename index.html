@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body id="body">
     <svg class="top blur" width="749" height="749" viewBox="0 0 749 749" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,7 +43,7 @@
         <h2 id="step__counter">Step 1 of 3</h2>
         <div class="step__dots">
             <div class="dot__wrapper dot1 current">
-                <div class="dot step1"></div>
+                <div class="dot step1 used"></div>
             </div>
             <div class="dot__wrapper dot2">
                 <div class="dot step2"></div>
@@ -61,6 +62,12 @@
         </radialGradient>
         </defs>
         </svg>
-            
+        <template id="template">
+            <div id="three__choices__wrapper">
+                <button class="button__choice" id="button1">Software Development</button>
+                <button class="button__choice" id="button2">User Experience</button>
+                <button class="button__choice" id="button3">Graphic Design</button>
+            </div>
+        </template>
 </body>
 </html>
