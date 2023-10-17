@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Outfit:wght@400;700&display=swap');
+:root{
+    --background: #121826;
+    --box-color: #212936;
+    --border-color: #4D5562;
+    --primary-header-color: #E5E7EB;
+    --secondary-header-color: #A1A1A9;
+    --button-background-bottom: #652CD1; 
+    --button-background-top: #845EEE;
+}
+*{
+    font-family: Inter;
+    padding: 0;
+    margin: 0;
+}
+#body{
+    background-color: var(--background);
+    overflow: hidden;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+}
+.blur{
+    position: absolute;
+    width: 50vw;
+    height: auto;
+}
+.top{
+    bottom: 50%;
+    right: 70%;
+}
+.bottom{
+    top: 50%;
+    left: 70%;
+}
+#center__box{
+    background-color: var(--box-color); 
+    width: 30vw;
+    height: 40vh;
+    padding: 4%;
+    border-radius: 1vmin;
+    outline: 3px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#top__header{
+    color: var(--primary-header-color);
+    font-size: 20px;
+}
+.input__title{
+    color: var(--secondary-header-color);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.input__box{
+    box-sizing: border-box;
+    background-color: var(--box-color);
+    border-color: transparent;
+    width: 100%;
+    height: 90%;
+    border-radius: 1vmin;
+    padding-left: 10px;
+    color: var(--border-color);
+    font-size: .75rem;
+    outline: 2.5px solid var(--border-color);
+}
+.input__wrapper:first-of-type{
+    margin-bottom: 20px;
+}
+.input__wrapper:last-of-type{
+    margin-bottom: 40px;
+}
+#button__wrapper{
+    margin-bottom: -7.5%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+#continue{
+    color: var(--primary-header-color);
+    font-size: 1rem;
+    font-weight: bold;
+    width: 50%;
+    height: 90%;
+    background-image: linear-gradient(to bottom right, var(--button-background-top), var(--button-background-bottom));
+    outline: transparent;
+    border-radius: 4vmin;
+    border-color: transparent;
+}
+#step__counter__wrapper{
+    margin-top: 2%;
+}
