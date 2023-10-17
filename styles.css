@@ -169,6 +169,20 @@
 button:hover{
     cursor: pointer;
 }
+#name__header, #email__header, #topics__header{
+    color: var(--secondary-header-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+#name__name, #email__email{
+    color: var(--primary-header-color);
+    font-size: 1.2rem;
+    margin-left: .8vw;
+}
+#name__stuff, #email__stuff{
+    display: flex;
+    align-items: center;
+}
 @media(max-width: 641px){
     #center__box{
         width: 65vw;

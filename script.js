@@ -11,10 +11,11 @@ const buttons = document.getElementsByClassName("button__choice");
 const nameInput = document.getElementsByClassName("box1")[0];
 const emailInput = document.getElementsByClassName("box2")[0];
 let email;
-let name;
+let userName;
 let buttonChoices = [];
 let clickCounter = 0;
 let selected = 0;
+
 
 button.addEventListener('click', ()=>{
     if(clickCounter===0){
@@ -36,10 +37,12 @@ button.addEventListener('click', ()=>{
 
 function validateForms(){
     if(nameInput.value !== "" & validateEmail(emailInput.value)){
-        name = nameInput.value;
+        userName = nameInput.value;
         email = emailInput.value;
-    } return true;
-    return false;
+        return true;
+    } 
+    //TESTING, CHANGE THIS TO FALSE
+    return true;
 }
 function validateEmail(email){
     let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -76,11 +79,12 @@ function selectButton(button){
         resetButton(button);
         console.log("already selected");
         selected--;
+        buttonChoices[button.getAttribute('id').replace("button", "")] = "nope";
         
     }else{
         button.style.background = "var(--button-background-bottom)";
         button.style.color = "var(--primary-header-color)";
-        buttonChoices.push(button.getAttribute('id').replace("button", ""));
+        buttonChoices[button.getAttribute('id').replace("button", "")] = button.getAttribute('id').replace("button", "");
         selected++;
     }
 }
@@ -89,10 +93,47 @@ function resetButton(button){
     button.style.color = "";
 }
 function transitionToScreenThree(){
+    let topics = getTopics();
     topHeader.innerHTML="Summary";
     stepCounter.innerHTML="Step 3 of 3";
     dots[1].classList.remove("current");
     dots[2].classList.add("current");
     innerDots[2].classList.add("used");
+    button.innerHTML="Confirm";
     document.getElementById("three__choices__wrapper").remove();
+    const tempP1 = document.querySelector("#template__page3__one");
+    const tempP2 = document.querySelector("#template__page3__two");
+    topHeaderWrapper.after(tempP2.content.cloneNode(true));
+    topHeaderWrapper.after(tempP1.content.cloneNode(true));
+    document.getElementById("name__name").innerHTML=userName;
+    document.getElementById("email__email").innerHTML=email;
+    console.log(topics.length);
+    if(topics.length>1){
+        let cloneCount = 0+topics.length;
+    }else{
+
+    }
+    
+}
+function getTopics(){
+    let returnVals = [];
+    for(let i = 0; i<buttonChoices.length; i++){
+        let current = buttonChoices[i];
+        switch(current){
+            case("1"):
+                returnVals.push("Software Development");
+                break;
+            case("2"):
+                returnVals.push("User Experience");
+                break;
+            case("3"):
+                returnVals.push("Graphic Design");
+                break;
+            default:
+                break;
+        }
+            
+        console.log(current);
+    }
+    return returnVals;
 }
