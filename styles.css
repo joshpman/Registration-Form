@@ -24,6 +24,7 @@
     align-items: center;
     justify-content: center;
     height: 95vh;
+    margin-top: 5vh;
 }
 .blur{
     position: absolute;
@@ -41,7 +42,7 @@
 #center__box{
     background-color: var(--box-color); 
     width: 30vw;
-    height: 40vh;
+    height: 45vh;
     padding: 4vw;
     border-radius: 1vmin;
     outline: 3px solid var(--border-color);
@@ -67,6 +68,7 @@
     border-radius: 1vmin;
     padding-left: 10px;
     outline: 2.5px solid var(--border-color);
+    color: var(--primary-header-color);
 }
 .input__box::placeholder{
     color: var(--border-color);
@@ -149,10 +151,11 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 80%;
+    height: 75%;
 }
 .button__choice{
     font-size: .875rem;
+    font-weight: bold;
     padding-left: 5%;
     text-align: left;
     color: #A1A1A9;
