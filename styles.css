@@ -131,7 +131,7 @@
 .dot__wrapper .step1{
     background-color: var(--dot-background);
 }
-.current{
+ .current{
     background-color: var(--dot-background-back);
 }
 .dot1{
@@ -142,4 +142,19 @@
     height: 12px;
     background-color: var(--border-color);
     border-radius: 50%;
+}
+@media(max-width: 641px){
+    #center__box{
+        width: 65vw;
+        height: 50vh;
+    }
+    #button__wrapper{
+        align-items: flex-start;
+    }
+    #continue{
+        height: 6vh;
+    }
+    #step__counter__wrapper{
+        width: 65vw;
+    }
 }
