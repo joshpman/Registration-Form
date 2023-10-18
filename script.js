@@ -157,6 +157,8 @@ function successScreen(){
     while(center.lastChild){
         center.removeChild(center.lastChild);
     }
+    dots[2].classList.remove("current");
+    stepCounter.innerHTML = "Done!";
     let temp = document.querySelector("#template__success");
     let success = temp.content.cloneNode(true);
     center.appendChild(success);
