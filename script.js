@@ -28,10 +28,10 @@ button.addEventListener('click', ()=>{
             clickCounter++;
             transitionToScreenThree();
         }
-        
-
+    }else if(clickCounter===2){
+        successScreen();
     }else{
-        triggerSubmit();
+        
     }
 });
 
@@ -41,11 +41,10 @@ function validateForms(){
         email = emailInput.value;
         return true;
     } 
-    //TESTING, CHANGE THIS TO FALSE
-    return true;
+    return false;
 }
 function validateEmail(email){
-    let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    let validRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if(email.match(validRegex)){
         return true;
     }
@@ -109,9 +108,19 @@ function transitionToScreenThree(){
     document.getElementById("email__email").innerHTML=email;
     console.log(topics.length);
     if(topics.length>1){
-        let cloneCount = 0+topics.length;
+        let cloneCount = -1+topics.length;
+        let list= document.getElementById("topics__list");
+        let liClone = document.getElementsByClassName("topics__list__item")[0];
+        for(let i = 0; i<cloneCount; i++){
+            list.appendChild(liClone.cloneNode());
+        }
+        let cloneList =document.getElementsByClassName("topics__list__item");
+        for(let i = 0; i<topics.length; i++){
+            cloneList[i].innerHTML = topics[i];
+        }
     }else{
-
+        let li = document.getElementsByClassName("topics__list__item")[0];
+        li.innerHTML=topics[0];
     }
     
 }
@@ -136,4 +145,21 @@ function getTopics(){
         console.log(current);
     }
     return returnVals;
+}
+
+function successScreen(){
+    console.log("Got it");
+    let center = document.getElementById("center__box");
+    let remove = center.children;
+    while(center.firstChild){
+        center.removeChild(center.firstChild);
+    }
+    while(center.lastChild){
+        center.removeChild(center.lastChild);
+    }
+    let temp = document.querySelector("#template__success");
+    let success = temp.content.cloneNode(true);
+    center.appendChild(success);
+    center.style.justifyContent="center";
+    center.style.alignItems="center";
 }

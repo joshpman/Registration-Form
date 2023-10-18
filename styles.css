@@ -41,7 +41,7 @@
 }
 #center__box{
     background-color: var(--box-color); 
-    width: 30vw;
+    width: 32vw;
     height: 45vh;
     padding: 4vw;
     border-radius: 1vmin;
@@ -183,6 +183,44 @@ button:hover{
     display: flex;
     align-items: center;
 }
+#topics__list{
+    margin-left: 2.5%;
+}
+
+
+.topics__list__item{
+    list-style-position:inside;
+    color: var(--primary-header-color);
+    font-weight: 600;
+    font-size: 1rem;
+}
+.topics__list__item:first-of-type{
+    padding-top: 2%;
+}
+.topics__list__item{
+    padding-bottom: 2%;
+}
+/*
+success__wrapper">
+                <h1 id="success__statement">&#x2705Success</h1>
+                <h2 id="leave__page"
+*/
+#success__wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#success__statement{
+    font-size: 3rem;
+    color: var(--primary-header-color);
+}
+#leave__page{
+    font-size: .875rem;
+    color: var(--secondary-header-color);
+    margin-bottom: -5vh;
+}
+
 @media(max-width: 641px){
     #center__box{
         width: 65vw;
